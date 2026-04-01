@@ -53,7 +53,7 @@ h1, h2, h3 {
 }
 
 .hour-box {
-    min-width: 100px;
+    min-width: 150px;
     background: rgba(255,255,255,0.2);
     padding: 10px;
     border-radius: 10px;
@@ -70,7 +70,6 @@ h1, h2, h3 {
     flex: 1;
     padding: 15px;
     text-align: center;
-    cursor: pointer;
 }
 
 .nav-btn:hover {
