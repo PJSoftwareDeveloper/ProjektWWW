@@ -56,7 +56,7 @@ h1, h2, h3 {
 }
 
 .hour-box {
-    min-width: 60px;
+    min-width: 100px;
     background: rgba(255,255,255,0.2);
     padding: 10px;
     border-radius: 10px;
