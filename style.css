@@ -6,7 +6,7 @@ body {
 }
 
 .app {
-    max-width: 420px;
+    max-width: 600px;
     margin: auto;
     min-height: 100vh;
     display: flex;
@@ -31,9 +31,6 @@ h1, h2, h3 {
     font-weight: bold;
 }
 
-.weather-icon {
-    font-size: 64px;
-}
 
 .row {
     display: flex;
