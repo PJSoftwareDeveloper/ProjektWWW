@@ -1,3 +1,88 @@
 body {
-    background-color: lightblue;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    color: white;
+}
+
+.app {
+    max-width: 420px;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.view {
+    padding: 20px;
+}
+
+
+h1, h2, h3 {
+    margin: 5px 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.big-temp {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.weather-icon {
+    font-size: 64px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.card {
+    background: rgba(255,255,255,0.2);
+    padding: 10px;
+    border-radius: 12px;
+    margin: 5px 0;
+}
+
+.hourly {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.hour-box {
+    min-width: 60px;
+    background: rgba(255,255,255,0.2);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.bottom-nav {
+    margin-top: auto;
+    display: flex;
+    background: rgba(0,0,0,0.2);
+}
+
+.nav-btn {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+canvas {
+    width: 100%;
+    height: 150px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
 }
