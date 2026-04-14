@@ -3,60 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ustawienia</title>
+<title>Aplikacja Pogodowa</title>
 <link rel="stylesheet" href="style.css"/>
-<style>
-    form{
-        text-align: center;
-    }
-    input {
-        width: 200px;
-        margin: 10px;
-        padding: 6px 12px;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #212529;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        appearance: none;
-        border-radius: 4px;
-        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-        :focus{
-            color: #212529;
-            background-color: #fff;
-            border-color: #86b7fe;
-            outline: 0;
-            box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
-        }
-                
-    }
-
-</style>
 </head>
 
 <body>
 
 <div class="app">
-    <div class="view">
-        <form>
-            <label for="city">Miasto:</label><br>
-            <input type="text" id="city"><br>
-            <label for="days">Ilosc dni dlugoterminowej:</label><br>
-            <input type="number" id="days" name="quantity" min="1" max="16"><br>
-            <input type="submit" value="Wyszukaj">
-        </form>
-    </div>
+    <nav>
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="longTerm.html" class="nav-item">Długoterminowa</a>
+        <a href="shortTerm.html" class="nav-item">Krótkoterminowa</a>
+        <a href="settings.html" class="nav-item">Ustawienia</a>
+    </nav>
+    <main id="settings" class="view">
 
-    <div class="bottom-nav">
-        <a class="nav-btn" href="index.html">Home</a>
-        <a class="nav-btn" href="longTerm.html">Długoterminowa</a>
-        <a class="nav-btn" href="shortTerm.html">Krótkoterminowa</a>
-        <a class="nav-btn" href="settings.html">Ustawienia</a>
-    </div>
-<script>
-</script>
+        <header>
+            <h2>Ustawienia</h2>
+        </header>
+
+        <section class="settings-section">
+            <ul class="settings-list">
+
+                <li>
+                    <label for="city">Miasto</label>
+                    <input type="text" id="city" placeholder="np. Białystok">
+                </li>
+
+                <li>
+                    <label for="days">Ilość dni prognozy</label>
+                    <input type="number" id="days" min="1" max="16" placeholder="1–16">
+                </li>
+
+                <li>
+                    <button class="settings-btn">Zapisz</button>
+                </li>
+
+            </ul>
+        </section>
+
+    </main>
+
+
+
+</div>
 
 </body>
 </html>

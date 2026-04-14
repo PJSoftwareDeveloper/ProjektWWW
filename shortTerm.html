@@ -4,38 +4,78 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aplikacja Pogodowa</title>
-
 <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
 
 <div class="app">
+    <nav>
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="longTerm.html" class="nav-item">Długoterminowa</a>
+        <a href="shortTerm.html" class="nav-item">Krótkoterminowa</a>
+        <a href="settings.html" class="nav-item">Ustawienia</a>
+    </nav>
 
-    <div id="details" class="view">
-        <h2>Piątek, 1 kwietnia</h2>
+    <main id="details" class="view">
 
-        <div class="center">
-            <div class="big-temp">12°C</div>
-        </div>
+        <header>
+            <h2>Piątek, 1 kwietnia</h2>
 
-        <div class="card">Opady: 80%</div>
-        <div class="card">Wilgotność: 85%</div>
-        <div class="card">Wiatr: 20 km/h</div>
-        <div class="card">Ciśnienie: 1012 hPa</div>
+            <div class="center">
+                <div class="big-temp">12°C</div>
+            </div>
+        </header>
 
-        <h3>Godzinowo</h3>
-        <div class="card">08:00 Zachmurzenie 9°</div>
-        <div class="card">11:00 Zachmurzenie 10°</div>
-        <div class="card">14:00 Częściowe zachmurzenie 11°</div>
-        <div class="card">17:00 Rozchmurzone 10°</div>
-    </div>
-    <div class="bottom-nav">
-        <a class="nav-btn" href="index.html">Home</a>
-        <a class="nav-btn" href="longTerm.html">Długoterminowa</a>
-        <a class="nav-btn" href="shortTerm.html">Krótkoterminowa</a>
-        <a class="nav-btn" href="settings.html">Ustawienia</a>
-    </div>
+        <section class="current-stats">
+            <div class="row">
+                <div>Wiatr 15 km/h</div>
+                <div>Wilgość 70%</div>
+            </div>
+
+            <div class="row">
+                <div>Wschód 06:10</div>
+                <div>Zachód 19:20</div>
+            </div>
+        </section>
+
+        <section class="hourly">
+            <h3>Godzinowo</h3>
+
+            <ul class="forecast-list">
+
+                <li>
+                    <span class="hour">08:00</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/cloudy.svg" alt="">
+                    <span class="desc">Zachmurzenie</span>
+                    <span class="temps">9°</span>
+                </li>
+
+                <li>
+                    <span class="hour">11:00</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/cloudy.svg" alt="">
+                    <span class="desc">Zachmurzenie</span>
+                    <span class="temps">10°</span>
+                </li>
+
+                <li>
+                    <span class="hour">14:00</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/partly-cloudy-day.svg" alt="">
+                    <span class="desc">Częściowe zachmurzenie</span>
+                    <span class="temps">11°</span>
+                </li>
+
+                <li>
+                    <span class="hour">17:00</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-day.svg" alt="">
+                    <span class="desc">Rozchmurzone</span>
+                    <span class="temps">10°</span>
+                </li>
+
+            </ul>
+        </section>
+
+    </main>
 
 </div>
 

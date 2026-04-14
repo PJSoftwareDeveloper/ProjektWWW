@@ -11,24 +11,76 @@
 <body>
 
 <div class="app">
-    <div id="week" class="view">
-        <h2>Prognoza 7-dniowa</h2>
 
-        <div class="card">Czwartek Zachmurzenie 15° / 7°</div>
-        <div class="card">Piątek Zachmurzenie 11° / 6°</div>
-        <div class="card">Sobota Częściowe zachmurzenie 13° / 8°</div>
-        <div class="card">Niedziela Częściowe zachmurzenie 17° / 9°</div>
-        <div class="card">Poniedziałek Zachmurzenie 10° / 5°</div>
-        <div class="card">Wtorek Słonecznie 12° / 6°</div>
-        <div class="card">Środa Słonecznie 14° / 7°</div>
-    </div>
+    <nav>
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="longTerm.html" class="nav-item">Długoterminowa</a>
+        <a href="shortTerm.html" class="nav-item">Krótkoterminowa</a>
+        <a href="settings.html" class="nav-item">Ustawienia</a>
+    </nav>
+    <main id="week" class="view">
 
-    <div class="bottom-nav">
-        <a class="nav-btn" href="index.html">Home</a>
-        <a class="nav-btn" href="longTerm.html">Długoterminowa</a>
-        <a class="nav-btn" href="shortTerm.html">Krótkoterminowa</a>
-        <a class="nav-btn" href="settings.html">Ustawienia</a>
-    </div>
+        <header>
+            <h2>Prognoza 7-dniowa</h2>
+        </header>
+
+        <section class="weekly-forecast">
+            <ul class="forecast-list">
+
+                <li>
+                    <span class="day">Czwartek</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/cloudy.svg" alt="">
+                    <span class="desc">Zachmurzenie</span>
+                    <span class="temps">15° / 7°</span>
+                </li>
+
+                <li>
+                    <span class="day">Piątek</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/cloudy.svg" alt="">
+                    <span class="desc">Zachmurzenie</span>
+                    <span class="temps">11° / 6°</span>
+                </li>
+
+                <li>
+                    <span class="day">Sobota</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/partly-cloudy-day.svg" alt="">
+                    <span class="desc">Częściowe zachmurzenie</span>
+                    <span class="temps">13° / 8°</span>
+                </li>
+
+                <li>
+                    <span class="day">Niedziela</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/partly-cloudy-day.svg" alt="">
+                    <span class="desc">Częściowe zachmurzenie</span>
+                    <span class="temps">17° / 9°</span>
+                </li>
+
+                <li>
+                    <span class="day">Poniedziałek</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/cloudy.svg" alt="">
+                    <span class="desc">Zachmurzenie</span>
+                    <span class="temps">10° / 5°</span>
+                </li>
+
+                <li>
+                    <span class="day">Wtorek</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-day.svg" alt="">
+                    <span class="desc">Słonecznie</span>
+                    <span class="temps">12° / 6°</span>
+                </li>
+
+                <li>
+                    <span class="day">Środa</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-day.svg" alt="">
+                    <span class="desc">Słonecznie</span>
+                    <span class="temps">14° / 7°</span>
+                </li>
+
+            </ul>
+        </section>
+
+    </main>
+
 
 </div>
 
