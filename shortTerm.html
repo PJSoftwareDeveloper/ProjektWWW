@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aplikacja Pogodowa</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+
+<div class="app">
+    <nav>
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="longTerm.html" class="nav-item">Długoterminowa</a>
+        <a href="shortTerm.html" class="nav-item">Krótkoterminowa</a>
+        <a href="settings.html" class="nav-item">Ustawienia</a>
+    </nav>
+
+    <main id="details" class="view">
+
+        <header>
+            <h2>Piątek, 1 kwietnia</h2>
+
+            <div class="center">
+                <div class="big-temp">12°C</div>
+            </div>
+        </header>
+
+        <section class="current-stats">
+            <div class="row">
+                <div>Wiatr 15 km/h</div>
+                <div>Wilgość 70%</div>
+            </div>
+
+            <div class="row">
+                <div>Wschód 06:10</div>
+                <div>Zachód 19:20</div>
+            </div>
+        </section>
+
+        <section class="hourly">
+            <h3>Godzinowo</h3>
+
+            <ul class="forecast-list">
+
+                <li>
+                    <span class="hour">08:00</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/cloudy.svg" alt="">
+                    <span class="desc">Zachmurzenie</span>
+                    <span class="temps">9°</span>
+                </li>
+
+                <li>
+                    <span class="hour">11:00</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/cloudy.svg" alt="">
+                    <span class="desc">Zachmurzenie</span>
+                    <span class="temps">10°</span>
+                </li>
+
+                <li>
+                    <span class="hour">14:00</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/partly-cloudy-day.svg" alt="">
+                    <span class="desc">Częściowe zachmurzenie</span>
+                    <span class="temps">11°</span>
+                </li>
+
+                <li>
+                    <span class="hour">17:00</span>
+                    <img class="icon" src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-day.svg" alt="">
+                    <span class="desc">Rozchmurzone</span>
+                    <span class="temps">10°</span>
+                </li>
+
+            </ul>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
