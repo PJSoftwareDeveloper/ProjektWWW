@@ -20,7 +20,12 @@ body {
 
 .view {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;      
+    overflow: hidden; 
 }
+
 
 h1, h2, h3 {
     margin: 5px 0;
@@ -40,22 +45,40 @@ h1, h2, h3 {
     justify-content: space-between;
     margin: 10px 0;
 }
-
 .tile {
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(6px);
-    border-radius: 14px;
-    padding: 16px;
-    color: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    width: 100px;             
+    min-width: 80px;
+    height: 140px;            
+    padding: 12px;
+    border-radius: 18px;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    transition: transform 0.15s ease, background 0.2s ease;
-    max-width: 120px;
-    min-width: 120px;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(6px);
+    transition: 0.2s ease;
 }
+
+.tile:hover {
+    transform: translateY(-4px);
+}
+
+.tile.morning,
+.forecast-list li.morning { background: rgba(135, 206, 250, 0.25) }
+
+.tile.day,
+.forecast-list li.day { background: rgba(30, 144, 255, 0.25) }
+
+.tile.evening,
+.forecast-list li.evening { background: rgba(123, 104, 238, 0.25) }
+
+.tile.night,
+.forecast-list li.night { background: rgba(25, 25, 112, 0.25) }
+
+
 
 .tile-grid {
     display: flex;
@@ -78,10 +101,21 @@ h1, h2, h3 {
 .tile-icon {
     font-size: 32px;
     margin: auto;
-    width: 32px;
+    width: 64px;
 }
 
+
+section.content {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 70px;
+}
+
+
+
 nav {
+    overflow: hidden;
+    flex-shrink: 0;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -91,6 +125,7 @@ nav {
     background: rgba(0,0,0,0.25);
     backdrop-filter: blur(6px);
     padding: 10px 0;
+    z-index: 1;
 }
 
 .nav-item {
@@ -98,9 +133,20 @@ nav {
     text-align: center;
     padding: 10px 0;
     color: white;
-    text-decoration: none;
-    font-size: 15px;
+    text-decoration: none; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
 }
+
+.nav-item img {
+    width: 22px;
+    height: 22px;
+    opacity: 0.9;
+}
+
 
 .nav-item:hover {
     background: rgba(255,255,255,0.15);
@@ -148,9 +194,11 @@ nav {
     font-size: 18px;
 }
 
-
 @media (min-width: 900px) {
 
+    section.content {
+        padding-bottom: 0px;
+    }
     .app {
         display: grid;
         grid-template-columns: 220px 1fr;

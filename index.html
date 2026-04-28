@@ -10,101 +10,57 @@
 <body>
 
 <div class="app">
+    
     <nav>
-        <a href="index.html" class="nav-item">Home</a>
-        <a href="longTerm.html" class="nav-item">Długoterminowa</a>
-        <a href="shortTerm.html" class="nav-item">Krótkoterminowa</a>
-        <a href="settings.html" class="nav-item">Ustawienia</a>
+        <a href="index.html" class="nav-item">
+            <img src="img/home.svg">
+            <span>Home</span>
+        </a>
+
+        <a href="longTerm.html" class="nav-item">
+            <img src="img/calendar.svg">
+            <span>Długoterminowa</span>
+        </a>
+
+        <a href="shortTerm.html" class="nav-item">
+            <img src="img/clock.svg">
+            <span>Krótkoterminowa</span>
+        </a>
+
+        <a href="settings.html" class="nav-item">
+            <img src="img/settings.svg">
+            <span>Ustawienia</span>
+        </a>
     </nav>
     <main id="home" class="view">
 
         <header>
-            <h2>Białystok</h2>
-            <p>Środa, 1 kwietnia</p>
+            <h2></h2>
+            <p></p>
 
             <div class="center">
-                <div class="big-temp">12°C</div>
+                <div class="big-temp"></div>
             </div>
         </header>
 
         <section class="current-stats">
             <div class="row">
-                <div>Wiatr 15 km/h</div>
-                <div>Wilgość 70%</div>
             </div>
 
             <div class="row">
-                <div>Wschód 06:10</div>
-                <div>Zachód 19:20</div>
             </div>
         </section>
 
         <section class="daily-forecast">
-            <div class="tile-grid">
-
-                <article class="tile">
-                    <div class="day">śr.</div>
-                    <div class="tile-icon">
-                        <img src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/clear-day.svg" alt="">
-                    </div>
-                    <div class="temps">14° / 6°</div>
-                </article>
-
-                <article class="tile">
-                    <div class="day">czw.</div>
-                    <div class="tile-icon">
-                        <img src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/cloudy.svg" alt="">
-                    </div>
-                    <div class="temps">15° / 5°</div>
-                </article>
-
-                <article class="tile">
-                    <div class="day">pt.</div>
-                    <div class="tile-icon">
-                        <img src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/cloudy.svg" alt="">
-                    </div>
-                    <div class="temps">14° / 4°</div>
-                </article>
-
-                <article class="tile">
-                    <div class="day">sob.</div>
-                    <div class="tile-icon">
-                        <img src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/partly-cloudy-day.svg" alt="">
-                    </div>
-                    <div class="temps">17° / 6°</div>
-                </article>
-
-                <article class="tile">
-                    <div class="day">niedz.</div>
-                    <div class="tile-icon">
-                        <img src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/partly-cloudy-day-rain.svg" alt="">
-                    </div>
-                    <div class="temps">16° / 7°</div>
-                </article>
-
-                <article class="tile">
-                    <div class="day">pon.</div>
-                    <div class="tile-icon">
-                        <img src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/partly-cloudy-day-rain.svg" alt="">
-                    </div>
-                    <div class="temps">14° / 4°</div>
-                </article>
-
-                <article class="tile">
-                    <div class="day">wt.</div>
-                    <div class="tile-icon">
-                        <img src="https://cdn.meteocons.com/3.0.0-next.10/svg/fill/cloudy.svg" alt="">
-                    </div>
-                    <div class="temps">13° / 4°</div>
-                </article>
-
-            </div>
+            <div class="tile-grid"></div>
         </section>
 
     </main>
 
 
 </div>
+    <script src="js/core.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
 </html>

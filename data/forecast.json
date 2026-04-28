@@ -1,0 +1,36 @@
+{
+  "location": {
+    "city": "Białystok",
+    "lat": 33.1325,
+    "lon": 23.1688,
+    "timezone": "Europe/Warsaw"
+  },
+
+  "current": {
+    "temp": 12,
+    "desc": "Częściowe zachmurzenie",
+    "icon": "partly-cloudy-day",
+    "wind": 15,
+    "humidity": 70,
+    "pressure": 1012,
+    "sunrise": "05:10",
+    "sunset": "19:20"
+  },
+
+  "hourly": [
+    { "time": "08:00", "temp": 9, "icon": "cloudy", "desc": "Zachmurzenie", "hour": 8 },
+    { "time": "11:00", "temp": 10, "icon": "cloudy", "desc": "Zachmurzenie", "hour": 11 },
+    { "time": "14:00", "temp": 11, "icon": "partly-cloudy-day", "desc": "Częściowe zachmurzenie", "hour": 14 },
+    { "time": "17:00", "temp": 10, "icon": "clear-day", "desc": "Rozchmurzone", "hour": 17 }
+  ],
+
+  "weekly": [
+    { "day": "śr.", "icon": "clear-day", "min": 6, "max": 14, "hour": 6, "desc": "Słonecznie" },
+    { "day": "czw.", "icon": "cloudy", "min": 5, "max": 15, "hour": 9, "desc": "Zachmurzenie" },
+    { "day": "pt.", "icon": "cloudy", "min": 4, "max": 14, "hour": 12, "desc": "Zachmurzenie" },
+    { "day": "sob.", "icon": "partly-cloudy-day", "min": 6, "max": 17, "hour": 15, "desc": "Częściowe zachmurzenie" },
+    { "day": "niedz.", "icon": "partly-cloudy-day-rain", "min": 7, "max": 16, "hour": 18, "desc": "Przelotny deszcz" },
+    { "day": "pon.", "icon": "rain", "min": 4, "max": 14, "hour": 21, "desc": "Deszcz" },
+    { "day": "wt.", "icon": "overcast", "min": 4, "max": 13, "hour": 2, "desc": "Pochmurno" }
+  ]
+}
