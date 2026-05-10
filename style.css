@@ -328,6 +328,7 @@ input {
 .city-names {
     height: 15vh;
     text-align: center;
+    padding-right: 45px;
 }
 
 .loader {
