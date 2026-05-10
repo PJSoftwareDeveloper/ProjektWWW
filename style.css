@@ -6,7 +6,7 @@ html, body {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #4facfe, #000);
+    background: linear-gradient(to bottom, #4facfe, #00c0aa);
     color: white;
 }
 
@@ -29,6 +29,10 @@ body {
 
 h1, h2, h3 {
     margin: 5px 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .center {
@@ -281,3 +285,67 @@ input {
     }
             
 }
+
+.modal-city {
+    background-color: #00000028;
+    opacity: 0;
+    position: fixed;
+    top: -40rlh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-city.open {
+    opacity: 1;
+    z-index: 999;
+}
+
+.modal-inner {
+    width: 300px;
+    grid-column: 2;
+    grid-row: 1;
+
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+
+    overflow-y: auto; 
+}
+
+.modal-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.city-names {
+    height: 15vh;
+    text-align: center;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
