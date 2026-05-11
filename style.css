@@ -304,6 +304,7 @@ input {
 
 .modal-city.open {
     opacity: 1;
+    margin-top: 500px;
     z-index: 999;
 }
 

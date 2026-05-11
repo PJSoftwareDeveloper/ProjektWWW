@@ -16,9 +16,22 @@ buttons.forEach(button => {
     button.addEventListener('click', handleCityButton)
 });
 
-function handleCityButton(){
-    console.log('Button clicked:', this.textContent);
+function handleCityButton() {
+    const name = this.textContent.trim();
+    const lat = this.dataset.lat;
+    const lon = this.dataset.lon;
+
+    console.log("Kliknięto:", name, lat, lon); 
+
+    localStorage.setItem("cityName", name);
+    localStorage.setItem("cityLat", lat);
+    localStorage.setItem("cityLon", lon);
+
+    loadForecast(); 
+    modal.classList.remove("open");
 }
+
+
 
 async function getWeather(name) {
     const url = "https://geocoding-api.open-meteo.com/v1/search?name="+name;
@@ -62,7 +75,7 @@ async function loadCityNames(){
         container = document.getElementById("city-name-"+(i+1));
         cityNameHTML = "";
 
-        cityNameHTML+='<button data-lat="' + data.results[i].latitude + '" data-lon="' + data.results[i].longitude + '">';
+        cityNameHTML+='<button class="city-button" data-lat="' + data.results[i].latitude + '" data-lon="' + data.results[i].longitude + '">';
         cityNameHTML+=data.results[i].name;
         cityNameHTML+=" <span>&#x"+(data.results[i].country_code.charCodeAt(0)+127397).toString(16)+";&#x"+(data.results[i].country_code.charCodeAt(1)+127397).toString(16)+";</span>";
 
@@ -70,6 +83,10 @@ async function loadCityNames(){
         
         container.innerHTML = cityNameHTML
     }
-    
+    buttons = document.querySelectorAll('.city-button');
+    buttons.forEach(button => {
+        button.addEventListener('click', handleCityButton);
+    });
+
 
 }

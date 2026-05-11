@@ -1,9 +1,6 @@
 {
   "location": {
-    "city": "Białystok",
-    "lat": 33.1325,
-    "lon": 23.1688,
-    "timezone": "Europe/Warsaw"
+    "city": "Białystok"
   },
 
   "current": {
@@ -12,7 +9,6 @@
     "icon": "partly-cloudy-day",
     "wind": 15,
     "humidity": 70,
-    "pressure": 1012,
     "sunrise": "05:10",
     "sunset": "19:20"
   },

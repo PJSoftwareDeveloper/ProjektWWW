@@ -43,7 +43,7 @@
 
                 <li>
                     <label for="citySearch">Miasto</label>
-                    <button id="citySearch">Nazwa Mista</button>
+                    <button id="citySearch">Wybierz</button>
                 </li>
                 <li>
                     <label for="days">Ilość dni prognozy</label>
@@ -59,13 +59,20 @@
 
         <section class="modal-city" id="modal-city">
             <div class="modal-inner">
-                    <h2 class="modal-top">Wyszukaj miasto <button class="modal-close" id="modal-close">&#10006;</button></h2>
-                <input type="text" id="cityName" onkeyup="loadCityNames()">
+
+                <header class="modal-top">
+                    <h2>Wyszukaj miasto</h2>
+                    <button class="modal-close" id="modal-close">&#10006;</button>
+                </header>
+
+                <input type="text" id="cityName" placeholder="Wpisz nazwę miasta..." onkeyup="loadCityNames()">
+
                 <ul class="city-names">
-                    <li class="city-button" id="city-name-1"></li>
-                    <li class="city-button"  id="city-name-2"></li>
-                    <li class="city-button"  id="city-name-3"></li>
+                    <li id="city-name-1"></li>
+                    <li id="city-name-2"></li>
+                    <li id="city-name-3"></li>
                 </ul>
+
             </div>
         </section>
 
