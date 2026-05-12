@@ -1,4 +1,6 @@
-loadForecast().then(data => {
+loadForecast(14).then(data => {
+    document.querySelector("header #location").textContent = data.location.city;
+
     const list = document.querySelector(".forecast-list");
     list.innerHTML = "";
 

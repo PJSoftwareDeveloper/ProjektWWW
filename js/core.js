@@ -23,19 +23,25 @@ function weatherDesc(code) {
 }
 
 
-async function loadForecast() {
+async function loadForecast(days) {
 
     const cityName = localStorage.getItem("cityName");
     const lat = localStorage.getItem("cityLat");
     const lon = localStorage.getItem("cityLon");
+    if (typeof days == 'undefined'){
+        days = localStorage.getItem("days");
+        if (days == null){
+            days = 1
+        }
+    }
 
     if (!lat || !lon) {
         console.warn("Brak wybranego miasta");
         return null;
     }
 
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,weathercode&current=temperature_2m,wind_speed_10m,relative_humidity_2m&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,weathercode&timezone=auto`;
-
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,weathercode&current=temperature_2m,wind_speed_10m,relative_humidity_2m&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,weathercode&timezone=auto&forecast_days=${days}`;
+    console.log(url)
     const response = await fetch(url);
     const data = await response.json();
 

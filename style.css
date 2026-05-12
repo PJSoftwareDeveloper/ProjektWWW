@@ -350,4 +350,11 @@ input {
     100% {
         transform: rotate(360deg);
     }
-    } 
+}
+
+.warning{
+    color: #ee4e4e;
+}
+.success{
+    color: #25b44e;
+}

@@ -1,6 +1,7 @@
 const openBtn = document.getElementById("citySearch");
 const closeBtn = document.getElementById("modal-close");
 const modal = document.getElementById("modal-city");
+const save = document.getElementById("save-btn");
 let buttons = document.querySelectorAll('.city-button');
 
 openBtn.addEventListener("click", () => {
@@ -10,6 +11,42 @@ openBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
     modal.classList.remove("open");
 });
+
+save.addEventListener("click", handleSaveButton);
+
+function handleSaveButton(){
+    const days = parseInt(document.getElementById("days").value, 10); 
+    const saveMessage = document.getElementById("saveMessage"); 
+
+    saveMessage.classList.remove("warning");
+    saveMessage.classList.remove("success");
+
+    if (isNaN(days)){
+        saveMessage.classList.add("warning");
+        saveMessage.innerHTML = "Proszę wpisać liczbę dni";
+        return;
+    }
+
+    if (days < 1 || days > 16){
+        saveMessage.classList.add("warning");
+        saveMessage.innerHTML = "Liczba dni musi zawierać się w przedziale od 1 do 16";
+        return;
+    }
+
+    if (typeof localStorage.getItem("cityName") == 'undefined' && localStorage.getItem("cityName") == null){
+        saveMessage.classList.add("warning");
+        saveMessage.innerHTML = "Proszę wybrać miasto";
+        return;
+    }
+
+    localStorage.setItem("days", days);
+
+    saveMessage.classList.add("success");
+    saveMessage.innerHTML = "Dane zapisane";
+
+    loadForecast(days); 
+    
+}
 
 buttons = document.querySelectorAll('.city-button');
 buttons.forEach(button => {
@@ -27,19 +64,18 @@ function handleCityButton() {
     localStorage.setItem("cityLat", lat);
     localStorage.setItem("cityLon", lon);
 
-    loadForecast(); 
     modal.classList.remove("open");
 }
 
 
 
-async function getWeather(name) {
-    const url = "https://geocoding-api.open-meteo.com/v1/search?name="+name;
-    const response = await fetch(url);
-    const data = await response.json();
+// async function getWeather(name) {
+//     const url = "https://geocoding-api.open-meteo.com/v1/search?name="+name;
+//     const response = await fetch(url);
+//     const data = await response.json();
 
-    return data;
-}
+//     return data;
+// }
 
 async function getCityNames(name) {
     const url = "https://geocoding-api.open-meteo.com/v1/search?name="+name;

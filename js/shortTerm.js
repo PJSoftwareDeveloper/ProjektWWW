@@ -1,4 +1,4 @@
-loadForecast().then(data => {
+loadForecast(void 0).then(data => {
     document.querySelector("header h2").textContent = data.location.city;
 
     document.querySelector("header p").textContent = new Date().toLocaleDateString("pl-PL", {

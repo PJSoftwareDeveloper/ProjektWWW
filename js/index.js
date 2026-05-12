@@ -1,4 +1,4 @@
-loadForecast().then(data => {
+loadForecast(7).then(data => {
     document.querySelector("header h2").textContent = data.location.city;
     document.querySelector(".big-temp").textContent = data.current.temp + "°C";
     document.querySelector("header p").textContent = new Date().toLocaleDateString("pl-PL", { weekday: "long", day: "numeric", month: "long" });
