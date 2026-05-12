@@ -54,6 +54,7 @@ buttons.forEach(button => {
 });
 
 function handleCityButton() {
+    const cityNameLabel = document.getElementById("cityNameLabel");
     const name = this.textContent.trim();
     const lat = this.dataset.lat;
     const lon = this.dataset.lon;
@@ -64,18 +65,10 @@ function handleCityButton() {
     localStorage.setItem("cityLat", lat);
     localStorage.setItem("cityLon", lon);
 
+    cityNameLabel.innerHTML = "Wybrane miasto: " + name;
+
     modal.classList.remove("open");
 }
-
-
-
-// async function getWeather(name) {
-//     const url = "https://geocoding-api.open-meteo.com/v1/search?name="+name;
-//     const response = await fetch(url);
-//     const data = await response.json();
-
-//     return data;
-// }
 
 async function getCityNames(name) {
     const url = "https://geocoding-api.open-meteo.com/v1/search?name="+name;
@@ -123,6 +116,8 @@ async function loadCityNames(){
     buttons.forEach(button => {
         button.addEventListener('click', handleCityButton);
     });
+}
 
-
+if (localStorage.getItem("cityName") != null){
+    document.getElementById("cityNameLabel").innerHTML = "Wybrane miasto: " + localStorage.getItem("cityName");
 }

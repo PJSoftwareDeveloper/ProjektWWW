@@ -1,5 +1,6 @@
 loadForecast(void 0).then(data => {
     document.querySelector("header h2").textContent = data.location.city;
+    document.getElementById("liczbaDni").innerHTML = `Prognoza ${localStorage.getItem("days")}-dniowa`;
 
     document.querySelector("header p").textContent = new Date().toLocaleDateString("pl-PL", {
             weekday: "long",
