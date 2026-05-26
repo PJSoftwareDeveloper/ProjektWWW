@@ -1,3 +1,8 @@
+if (localStorage.getItem("darkmode") === "true") {
+    document.body.classList.add("dark");
+}
+
+
 loadForecast().then(data => {
     const days = Number(localStorage.getItem("forecastDays")) || 7;
     const hoursToShow = days * 24;

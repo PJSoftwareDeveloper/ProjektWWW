@@ -155,6 +155,9 @@ wybór miasta
 
 ustawienie liczby dni prognozy
 
+ustawienie trybu ciemnego
+
+
 Funkcje pomocnicze
 getTimeClass(hour)
 Zwraca klasę CSS na podstawie godziny:

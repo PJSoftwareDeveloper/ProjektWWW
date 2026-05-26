@@ -358,3 +358,35 @@ input {
 .success{
     color: #25b44e;
 }
+body.dark {
+    background: #111;
+    color: #eee;
+}
+
+body.dark nav {
+    background: #222;
+}
+
+body.dark .nav-item span {
+    color: #eee;
+}
+
+body.dark .view {
+    background: #111;
+}
+
+body.dark input,
+body.dark button {
+    background: #222;
+    color: #eee;
+    border-color: #444;
+}
+html input[type="checkbox"]{
+    width: auto;
+}
+
+body.dark .tile,
+body.dark li {
+    background: #1a1a1a;
+    border-color: #333;
+}

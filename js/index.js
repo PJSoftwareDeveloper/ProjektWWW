@@ -1,3 +1,8 @@
+if (localStorage.getItem("darkmode") === "true") {
+    document.body.classList.add("dark");
+}
+
+
 loadForecast().then(data => {
 
     document.querySelector("header h2").textContent = data.location.city;

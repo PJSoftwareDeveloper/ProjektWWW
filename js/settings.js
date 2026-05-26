@@ -4,6 +4,12 @@ const modal = document.getElementById("modal-city");
 const save = document.getElementById("save-btn");
 let buttons = document.querySelectorAll('.city-button');
 
+if (localStorage.getItem("darkmode") === "true") {
+    document.body.classList.add("dark");
+    document.getElementById("darkmode").checked = true;
+}
+
+
 openBtn.addEventListener("click", () => {
     modal.classList.add("open");
 });
@@ -87,6 +93,20 @@ function handleSaveSettings() {
     const modal = document.getElementById("settings");
     if (modal) modal.classList.remove("open");
 }
+
+function loadTheme() {
+    const dark = localStorage.getItem("darkmode") === "true";
+    document.getElementById("darkmode").checked = dark;
+    document.body.classList.toggle("dark", dark);
+}
+
+
+
+document.getElementById("darkmode").addEventListener("change", () => {
+    const dark = document.getElementById("darkmode").checked;
+    localStorage.setItem("darkmode", dark);
+    document.body.classList.toggle("dark", dark);
+});
 
 async function getWeather(name) {
     const url = "https://geocoding-api.open-meteo.com/v1/search?name="+name;
