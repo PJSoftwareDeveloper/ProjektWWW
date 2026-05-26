@@ -88,8 +88,6 @@ function handleSaveSettings() {
     if (modal) modal.classList.remove("open");
 }
 
-document.querySelector(".settings-btn").addEventListener("click", handleSaveSettings);
-
 async function getWeather(name) {
     const url = "https://geocoding-api.open-meteo.com/v1/search?name="+name;
     const response = await fetch(url);

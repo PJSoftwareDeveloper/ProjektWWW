@@ -9,18 +9,48 @@ function getTimeClass(hour) {
 function weatherDesc(code) {
     const map = {
         0: "Bezchmurnie",
-        1: "Częściowe zachmurzenie",
+        1: "Głównie bezchmurnie",
         2: "Częściowe zachmurzenie",
         3: "Zachmurzenie",
+
         45: "Mgła",
-        48: "Mgła",
-        51: "Mżawka",
-        61: "Deszcz",
-        80: "Przelotny deszcz",
-        95: "Burza"
+        48: "Osadzająca się mgła szronowa",
+
+        51: "Mżawka lekka",
+        53: "Mżawka umiarkowana",
+        55: "Mżawka gęsta",
+
+        56: "Marznąca mżawka lekka",
+        57: "Marznąca mżawka gęsta",
+
+        61: "Lekki deszcz",
+        63: "Umiarkowany deszcz",
+        65: "Silny deszcz",
+
+        66: "Lekki marznący deszcz",
+        67: "Silny marznący deszcz",
+
+        71: "Lekki śnieg",
+        73: "Umiarkowany śnieg",
+        75: "Silny śnieg",
+
+        77: "Ziarnisty śnieg",
+
+        80: "Przelotne opady deszczu lekkie",
+        81: "Przelotne opady deszczu umiarkowane",
+        82: "Przelotne opady deszczu intensywne",
+
+        85: "Przelotne opady śniegu lekkie",
+        86: "Przelotne opady śniegu intensywne",
+
+        95: "Burza",
+        96: "Burza z lekkim gradem",
+        99: "Burza z silnym gradem"
     };
+
     return map[code] ?? "Pogoda";
 }
+
 
 
 async function loadForecast(days) {
