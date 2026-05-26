@@ -31,7 +31,25 @@ function handleCityButton() {
     modal.classList.remove("open");
 }
 
+function handleSaveSettings() { 
+    const daysInput = document.getElementById("days");
+    const days = Number(daysInput.value);
 
+    if (isNaN(days) || days < 1 || days > 16) {
+        alert("Podaj liczbę dni od 1 do 16");
+        return;
+    }
+
+    localStorage.setItem("forecastDays", days);
+
+    console.log("Zapisano ustawienia:", { days });
+
+
+    const modal = document.getElementById("settings");
+    if (modal) modal.classList.remove("open");
+}
+
+document.querySelector(".settings-btn").addEventListener("click", handleSaveSettings);
 
 async function getWeather(name) {
     const url = "https://geocoding-api.open-meteo.com/v1/search?name="+name;
@@ -49,44 +67,50 @@ async function getCityNames(name) {
     return data;
 }
 
-async function loadCityNames(){
+async function loadCityNames() {
     const text = document.getElementById("cityName").value;
-    let container = document.getElementById("city-name-1");
 
-    for(i =0; i<3; i++){
-        let container = document.getElementById("city-name-"+(i+1));
-        container.innerHTML = '';
-    }
+    const containers = [
+        document.getElementById("city-name-1"),
+        document.getElementById("city-name-2"),
+        document.getElementById("city-name-3")
+    ];
 
-    container = document.getElementById("city-name-1");
-    container.innerHTML = '<span class="loader"></span>';
+    containers.forEach(c => c.replaceChildren());
 
-    let data = await getCityNames(text);
+    const loader = document.createElement("span");
+    loader.classList.add("loader");
+    containers[0].replaceChildren(loader);
 
-    if (!data.hasOwnProperty("results")) {
-        container.innerHTML = '<h5>Nazwa ma za mało znaków lub nie instnieje';
+    const data = await getCityNames(text);
+
+    if (!data.results) {
+        const msg = document.createElement("h5");
+        msg.textContent = "Brak wyników";
+        containers[0].replaceChildren(msg);
         return;
     }
 
-    let cityNameHTML = "";
-    
-    for(i =0; i<3; i++){
+    data.results.slice(0, 3).forEach((city, i) => {
+        const li = containers[i];
+        li.replaceChildren(); 
 
-        container = document.getElementById("city-name-"+(i+1));
-        cityNameHTML = "";
+        const btn = document.createElement("button");
+        btn.classList.add("city-button");
+        btn.dataset.lat = city.latitude;
+        btn.dataset.lon = city.longitude;
 
-        cityNameHTML+='<button class="city-button" data-lat="' + data.results[i].latitude + '" data-lon="' + data.results[i].longitude + '">';
-        cityNameHTML+=data.results[i].name;
-        cityNameHTML+=" <span>&#x"+(data.results[i].country_code.charCodeAt(0)+127397).toString(16)+";&#x"+(data.results[i].country_code.charCodeAt(1)+127397).toString(16)+";</span>";
+        const nameNode = document.createTextNode(city.name + " ");
 
-        cityNameHTML+='</button>';
-        
-        container.innerHTML = cityNameHTML
-    }
-    buttons = document.querySelectorAll('.city-button');
-    buttons.forEach(button => {
-        button.addEventListener('click', handleCityButton);
+        const flag = document.createElement("span");
+        flag.textContent = countryCodeToFlag(city.country_code);
+
+        btn.appendChild(nameNode);
+        btn.appendChild(flag);
+
+        btn.addEventListener("click", handleCityButton);
+
+        li.replaceChildren(btn);
     });
-
-
 }
+
