@@ -2,18 +2,34 @@ loadForecast(14).then(data => {
     document.querySelector("header #location").textContent = data.location.city;
 
     const list = document.querySelector(".forecast-list");
-    list.innerHTML = "";
+    list.replaceChildren(); 
 
     data.weekly.forEach(day => {
+
         const li = document.createElement("li");
         li.classList.add(getTimeClass(day.hour));
 
-        li.innerHTML = `
-            <span class="day">${day.day}</span>
-            <img class="icon" src="img/${day.icon}.svg">
-            <span class="desc">${day.desc}</span>
-            <span class="temps">${day.max}° / ${day.min}°</span>
-        `;
+        const daySpan = document.createElement("span");
+        daySpan.classList.add("day");
+        daySpan.textContent = day.day;
+
+        const icon = document.createElement("img");
+        icon.classList.add("icon");
+        icon.src = `img/${day.icon}.svg`;
+        icon.alt = day.desc;
+
+        const desc = document.createElement("span");
+        desc.classList.add("desc");
+        desc.textContent = day.desc;
+
+        const temps = document.createElement("span");
+        temps.classList.add("temps");
+        temps.textContent = `${day.max}° / ${day.min}°`;
+
+        li.appendChild(daySpan);
+        li.appendChild(icon);
+        li.appendChild(desc);
+        li.appendChild(temps);
 
         list.appendChild(li);
     });

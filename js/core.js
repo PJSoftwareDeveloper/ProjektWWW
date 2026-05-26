@@ -89,3 +89,10 @@ async function loadForecast(days) {
     return formatted;
 }
 
+function countryCodeToFlag(code) {
+    return [...code.toUpperCase()]
+        .map(c => String.fromCodePoint(c.charCodeAt(0) + 127397))
+        .join('');
+}
+
+
