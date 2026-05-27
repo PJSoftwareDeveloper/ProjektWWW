@@ -3,7 +3,7 @@ if (localStorage.getItem("darkmode") === "true") {
 }
 
 
-loadForecast().then(data => {
+loadForecast(7).then(data => {
 
     document.querySelector("header h2").textContent = data.location.city;
     document.querySelector(".big-temp").textContent = data.current.temp + "°C";
