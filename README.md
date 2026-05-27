@@ -1,6 +1,5 @@
 WeatherApp
 Lekka, szybka i w pełni front‑endowa aplikacja pogodowa oparta o Open‑Meteo API.
-Działa bez backendu, bez kluczy API i w pełni w przeglądarce.
 
 Funkcje
 Wyszukiwanie miasta (API geokodowania Open‑Meteo)
